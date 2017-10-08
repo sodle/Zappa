@@ -813,6 +813,7 @@ class ZappaCLI(object):
             click.echo(click.style(type(e).__name__, fg="red") + ": " + e.args[0])
             sys.exit(-1)
         except Exception as e:
+            print(e)
             click.echo(click.style("Warning!", fg="red") + " Couldn't get function " + self.lambda_name +
                        " in " + self.zappa.aws_region + " - have you deployed yet?")
             sys.exit(-1)
